@@ -1,0 +1,8 @@
+// Last edit: Thu, 14 Jul 16 13:56:04 -0400
+_rfsn_tracker.load_settings({
+	version : 2.0,
+	base_url : 'https://vincerocollective.refersion.com/',
+	xdomains: [],
+	verbose: false,
+	is_loaded: true
+})

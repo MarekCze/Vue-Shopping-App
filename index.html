@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product</title>
+    <title>Keep Track Of Time In Style</title>
     <link rel="stylesheet" type="text/css" href="product_style.css">
 </head>
 <body>
@@ -23,6 +23,17 @@
             <img class="banner" src="assets/img/vinceroBanner2.jpg" alt="Vincero image">
             
             <div class="productPreview">
+                <div class="companySummary">
+                        <h1>Vincero</h1>
+                        <hr>
+                        <p>Obsessively designed to make a bold statement,
+                            our goal is to create watches that can match your hustle.
+                            These are not your cookie-cutter minimalist designs.
+                            Every collection has a distinct look and quality you can feel.
+                            The things we make set the tone for everything we do as a company.
+                            Our products must be bold, uncompromising, and quite literally the best value in our industry.
+                            This is a high bar, but it has been our goal since Day 1.</p>
+                </div>
                 <product v-bind:prod-index='0'></product>
                 <product v-bind:prod-index='1'></product>
                 <product v-bind:prod-index='2'></product>
@@ -34,6 +45,15 @@
                 <product v-bind:prod-index='3'></product>
                 <product v-bind:prod-index='4'></product>
                 <product v-bind:prod-index='5'></product>
+                <div class="companySummary">
+                    <h1>Breguet</h1>
+                    <hr>
+                    <p>We don't simply sell watches. We sell history. History that goes back as far as 1775.
+                        Throughout the course of time we have contributed immensely to the field of time keeping,
+                        with the creation of the self-winding watch, the first wrist watch, and even the equation of time.
+                        A Breguet watch is more than a timepiece, it is a status symbol.
+                    </p>
+                </div>
             </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
