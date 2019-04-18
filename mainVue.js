@@ -19,7 +19,7 @@ Vue.component('product', {
           >
      </div>
 
-          <button v-on:click="addToCart" 
+          <button v-on:click="addToCart(prodIndex)" 
             :disabled="!inStock"
             :class="{ disabledButton: !inStock }"
             >
@@ -37,6 +37,7 @@ Vue.component('product', {
         {
           brand: 'Vincero',
           model: 'CHRONO S-CLASS',
+          productId: 0,
           selectedVariant: 0,  
           variants: [
             {
@@ -68,6 +69,7 @@ Vue.component('product', {
         {
           brand: 'Vincero',
           model: 'KAIROS SERIES',
+          productId: 1,
           selectedVariant: 0,
           variants: [
             {
@@ -99,6 +101,7 @@ Vue.component('product', {
         {
         brand: 'Vincero',
         model: 'BELLWETHER',
+        productId: 2,
         selectedVariant: 0,
         variants: [
         {
@@ -130,6 +133,7 @@ Vue.component('product', {
         {
           brand: 'Breguet',
           model: 'CLASSIQUE',
+          productId: 3,
           selectedVariant: 0,
           variants: [
           {
@@ -155,6 +159,7 @@ Vue.component('product', {
         {
           brand: 'Breguet',
           model: 'MARINE',
+          productId: 4,
           selectedVariant: 0,
           variants: [
           {
@@ -180,6 +185,7 @@ Vue.component('product', {
         {
           brand: 'Breguet',
           model: 'HERITAGE',
+          productId: 5,
           selectedVariant: 0,
           variants: [
           {
@@ -219,8 +225,8 @@ Vue.component('product', {
     }
   },
     methods: {
-      addToCart() {
-          this.$emit('add-to-cart', this.variants[this.selectedVariant].variantId)
+      addToCart(prodIndex) {
+          this.$emit('add-to-cart', this.products[prodIndex].productId, this.products[prodIndex].variants[this.selectedVariant].variantId)
       },
       updateProduct(index) {  
           this.selectedVariant = index
@@ -280,7 +286,7 @@ Vue.component('productDetails', {
         <p>{{products[prodIndex].description}}</p>
       </div>
 
-      <button v-on:click="addToCart" 
+      <button v-on:click="addToCart(prodIndex)" 
         :disabled="!inStock"
         :class="{ disabledButton: !inStock }"
         >
@@ -298,6 +304,7 @@ Vue.component('productDetails', {
           model: 'CHRONO S-CLASS',
           description: 'Crafted to make a statement, the S Class is for the modern gentleman who is bold, daring, and pioneering.',
           price: '$189',
+          productId: 0,
           selectedVariant: 0,  
           variants: [
             {
@@ -331,6 +338,7 @@ Vue.component('productDetails', {
           model: 'KAIROS SERIES',
           description: 'Sleek enough to wear to work and rebellious enough to match your hustle, The Kairos will quickly become your go to timepiece.',
           price: '$159',
+          productId: 1,
           selectedVariant: 0,
           variants: [
             {
@@ -364,6 +372,7 @@ Vue.component('productDetails', {
         model: 'BELLWETHER',
         description: 'Designed to impress even the toughest critics, the Bellwether is the epitome of sophistication. No matter your plans, make a statement at every occasion.',
         price: '$229',
+        productId: 2,
         selectedVariant: 0,
         variants: [
         {
@@ -397,6 +406,7 @@ Vue.component('productDetails', {
           model: 'CLASSIQUE',
           description: 'The Classique wristwatches exemplify the watchmaking ideals of precision, clarity and elegant lines.',
           price: '$19000',
+          productId: 3,
           selectedVariant: 0,
           variants: [
           {
@@ -424,6 +434,7 @@ Vue.component('productDetails', {
           model: 'MARINE',
           description: 'Marine watches are based on the traditional Breguet values, while interpreting them in a contemporary way in order to create sporty timepieces.',
           price: '$21000',
+          productId: 4,
           selectedVariant: 0,
           variants: [
           {
@@ -449,8 +460,9 @@ Vue.component('productDetails', {
         {
           brand: 'Breguet',
           model: 'HERITAGE',
-          description: 'A Breguet watch does not need its conventional round case to be recognised for what it is. The Héritage models show that even in a curved tonneau case, a Breguet remains unmistakably a Breguet.',
+          description: 'A Breguet watch does not need its conventional round case to be recognised for what it is. The Heritage models show that even in a curved tonneau case, a Breguet remains unmistakably a Breguet.',
           price: '$26000',
+          productId: 5,
           selectedVariant: 0,
           variants: [
           {
@@ -469,29 +481,29 @@ Vue.component('productDetails', {
         }
       ],
       brand: 'Vue Mastery',
-        selectedVariant: 0,
-      
-        details: ['80% cotton', '20% polyester', 'Gender-neutral'],
-        variants: [
-        {
-          variantId: 2234,
-          color: 'green',
-          variantImage: './assets/img/Chrono-S-Matte-Black.jpg',
-          variantQuantity: 10    
-        },
-        {
-          variantId: 2235,
-          color: 'blue',
-          variantImage: 'https://www.vuemastery.com/images/challenges/vmSocks-blue-onWhite.jpg',
-          variantQuantity: 10    
-        }
-      ],
+      selectedVariant: 0,
+    
+      details: ['80% cotton', '20% polyester', 'Gender-neutral'],
+      variants: [
+      {
+        variantId: 2234,
+        color: 'green',
+        variantImage: './assets/img/Chrono-S-Matte-Black.jpg',
+        variantQuantity: 10    
+      },
+      {
+        variantId: 2235,
+        color: 'blue',
+        variantImage: 'https://www.vuemastery.com/images/challenges/vmSocks-blue-onWhite.jpg',
+        variantQuantity: 10    
+      }
+    ],
       
     }
   },
     methods: {
-      addToCart() {
-          this.$emit('add-to-cart', this.variants[this.selectedVariant].variantId)
+      addToCart(prodIndex) {
+          this.$emit('add-to-cart', this.products[prodIndex].productId, this.products[prodIndex].variants[this.selectedVariant].variantId)
       },
       updateProduct(index) {  
           this.selectedVariant = index
@@ -521,8 +533,7 @@ Vue.component('productDetails', {
     }
   })
 
-
-
+Vue.config.devtools = true
 var app = new Vue({
 el: '#app',
 data: {

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keep Track Of Time In Style</title>
+    <link rel="stylesheet" type="text/css" href="product_style.css">
+</head>
+<body>
+        <div id="app">
+        <header>
+                <div class="nav-bar">
+                    <ul class="navi">
+                        <li><a class="navLogo" href="./index.html"><span class="websiteName">Timepiece.com</span></a></li>
+                        <li class="logo-li"><a href="./index.html"><img class="logo" src="assets/img/watchiconFaintGold2.svg" alt="logo"></a></li>
+                        <li><a class="navLink" href="./products.html">Products</a></li>
+                        <li><a class="navLink" href="./about.html">About Us</a></li>
+                        <li><a class="navLink" href="./contact.html">Contact Us</a></li>
+                        <li><a class="navLink" href="shoppingCart.html">Cart({{cart.length}})</a></li>
+                    </ul>
+                </div>
+        </header>
+        <main>
+            <div class="cart">
+                <ul>
+                    <li v-for="item in cart">{{item}}</li>
+                </ul>
+            </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="mainVue.js"></script>
+    </div>
+</body>
+</html>

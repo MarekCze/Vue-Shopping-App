@@ -15,30 +15,37 @@
                         <li><a class="navLink" href="./products.html">Products</a></li>
                         <li><a class="navLink" href="./about.html">About Us</a></li>
                         <li><a class="navLink" href="./contact.html">Contact Us</a></li>
-                        <li><a class="navLink" href="cart.html">Cart({{cart.length}})</a></li>
+                        <li><a class="navLink" href="shoppingCart.html">Cart({{cart.length}})</a></li>
                     </ul>
                 </div>
         </header>
         <main>
-       
-            <h1>Vincero</h1>
-            <hr>
+            <div class="brandHeading">
+                <hr>
+                <h1 class="brandh1"><a href="https://vincerowatches.com/collections/watches">Vincero</a></h1>
+                <hr>
+            </div>
+            
             <div class="productPreview">
                 <product-details v-bind:prod-index='0'></product-details>
                 <product-details v-bind:prod-index='1'></product-details>
                 <product-details v-bind:prod-index='2'></product-details>
                 <div class="side-image">
-                    <img src="assets/img/vincero_small_image_06.jpg">
-                    <img src="assets/img/vincero_small_image2.jpg">
+                    <img class="side-image1" src="assets/img/vincero_small_image_06.jpg">
+                    <img class="side-image2" src="assets/img/vincero_small_image2.jpg">
                 </div>
             </div>
 
-            <h1>Breguet</h1>
-            <hr>
+            <div class="brandHeading">
+                <hr>
+                <h1 class="brandh1"><a href="https://www.breguet.com/en">Breguet</a></h1>
+                <hr>
+            </div>
+            
             <div class="productPreview">
                 <div class="side-image">
-                    <img src="assets/img/breguet_small_image1resized.jpg">
-                    <img src="assets/img/breguet_small_image2resized.jpg">
+                    <img class="side-image1" src="assets/img/breguet_small_image1resized.jpg">
+                    <img class="side-image2" src="assets/img/breguet_small_image2resized.jpg">
                 </div>
                 <product-details v-bind:prod-index='3'></product-details>
                 <product-details v-bind:prod-index='4'></product-details>

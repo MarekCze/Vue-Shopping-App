@@ -15,7 +15,7 @@
                         <li><a class="navLink" href="./products.html">Products</a></li>
                         <li><a class="navLink" href="./about.html">About Us</a></li>
                         <li><a class="navLink" href="./contact.html">Contact Us</a></li>
-                        <li><a class="navLink" href="cart.html">Cart({{cart.length}})</a></li>
+                        <li><a class="navLink" href="shoppingCart.html">Cart({{cart.length}})</a></li>
                     </ul>
                 </div>
         </header>
@@ -34,17 +34,17 @@
                             Our products must be bold, uncompromising, and quite literally the best value in our industry.
                             This is a high bar, but it has been our goal since Day 1.</p>
                 </div>
-                <product v-bind:prod-index='0'></product>
-                <product v-bind:prod-index='1'></product>
-                <product v-bind:prod-index='2'></product>
+                <product v-bind:prod-index='0' @add-to-cart="updateCart"></product>
+                <product v-bind:prod-index='1' @add-to-cart="updateCart"></product>
+                <product v-bind:prod-index='2' @add-to-cart="updateCart"></product>
             </div>
 
             <img class="banner" src="assets/img/breguetBanner-White.jpg" alt="Breguet image">
 
             <div class="productPreview">
-                <product v-bind:prod-index='3'></product>
-                <product v-bind:prod-index='4'></product>
-                <product v-bind:prod-index='5'></product>
+                <product v-bind:prod-index='3' @add-to-cart="updateCart"></product>
+                <product v-bind:prod-index='4' @add-to-cart="updateCart"></product>
+                <product v-bind:prod-index='5' @add-to-cart="updateCart"></product>
                 <div class="companySummary">
                     <h1>Breguet</h1>
                     <hr>
