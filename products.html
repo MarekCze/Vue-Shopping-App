@@ -27,9 +27,9 @@
             </div>
             
             <div class="productPreview">
-                <product-details v-bind:prod-index='0'></product-details>
-                <product-details v-bind:prod-index='1'></product-details>
-                <product-details v-bind:prod-index='2'></product-details>
+                <product-details v-bind:prod-index='0' @add-to-cart="updateCart"></product-details>
+                <product-details v-bind:prod-index='1' @add-to-cart="updateCart"></product-details>
+                <product-details v-bind:prod-index='2' @add-to-cart="updateCart"></product-details>
                 <div class="side-image">
                     <img class="side-image1" src="assets/img/vincero_small_image_06.jpg">
                     <img class="side-image2" src="assets/img/vincero_small_image2.jpg">
@@ -47,9 +47,9 @@
                     <img class="side-image1" src="assets/img/breguet_small_image1resized.jpg">
                     <img class="side-image2" src="assets/img/breguet_small_image2resized.jpg">
                 </div>
-                <product-details v-bind:prod-index='3'></product-details>
-                <product-details v-bind:prod-index='4'></product-details>
-                <product-details v-bind:prod-index='5'></product-details>
+                <product-details v-bind:prod-index='3' @add-to-cart="updateCart"></product-details>
+                <product-details v-bind:prod-index='4' @add-to-cart="updateCart"></product-details>
+                <product-details v-bind:prod-index='5' @add-to-cart="updateCart"></product-details>
             </div>
 
             

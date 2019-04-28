@@ -336,6 +336,11 @@ body {
   margin-top: 15px;
 }
 
+.cartContainer{
+  width: 100%;
+  height: 1000px;
+}
+
 @media only screen and (max-width: 1400px){
   .description{
     font-size: 1.1em;

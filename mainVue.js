@@ -503,7 +503,9 @@ Vue.component('productDetails', {
   },
     methods: {
       addToCart(prodIndex) {
-          this.$emit('add-to-cart', this.products[prodIndex].productId, this.products[prodIndex].variants[this.selectedVariant].variantId)
+        var item = {prodId:this.products[prodIndex], variantId:this.products[prodIndex].variants[this.selectedVariant].variantId}
+        console.log(item)
+          this.$emit('add-to-cart', item)
       },
       updateProduct(index) {  
           this.selectedVariant = index
@@ -533,6 +535,22 @@ Vue.component('productDetails', {
     }
   })
 
+  Vue.component('shoppingCart', {
+    template: `
+      <div class="cartContainer">
+        <ul>
+          <li v-for="item in items">{{item}}</li>
+        </ul>
+      </div>
+    `,
+    data() {
+      return {
+        items: getStorage()
+      }
+    }
+  })
+  
+
 Vue.config.devtools = true
 var app = new Vue({
 el: '#app',
@@ -541,8 +559,15 @@ data: {
   cart: []
 },
 methods: {
-  updateCart(id) {
-      this.cart.push(id)
+  updateCart(item) {
+      this.cart.push(item)
+      localStorage.setItem("items", JSON.stringify(this.cart))
+      var ans = JSON.parse(localStorage.getItem("items"))
+      console.log(ans)
+  },  
+  getStorage(){
+    var storage = JSON.parse(localStorage.getItem("items"));
+    return storage;
   },
   removeItem(id) {
       for(var i = this.cart.length - 1; i >= 0; i--) {
